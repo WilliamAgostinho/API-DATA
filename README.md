@@ -1,6 +1,10 @@
 Este projeto consiste em uma API em Node.js (backend) e uma interface em React com Vite (frontend) para controle de produtos com autenticação JWT.
 
 ---
+Usuário para login deve conter:
+Nome, email e senha
+Para realizar o login somente email e senha é validado
+---
 
 ## 🔧 Pré-requisitos
 
