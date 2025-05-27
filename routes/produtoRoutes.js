@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const produtoController = require('../controllers/produtoController');
+const autenticarToken = require('../middleware/authToken')
+
+router.use(autenticarToken);
 
 router.get('/', produtoController.getTodos);
 router.get('/:id', produtoController.getPorId);

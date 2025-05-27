@@ -25,8 +25,9 @@ Para realizar o login somente email e senha é validado
 
 2. Instale as dependências:
 
-   ```bash
+   ```cmd
    npm install
+   npm install express-rate-limit
    ```
 
 3. Rode o backend:
