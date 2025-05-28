@@ -144,6 +144,11 @@ export default function CadastroProduto() {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/');
+  };
+
   const formatarMoeda = (valor) => {
     return parseFloat(valor).toLocaleString('pt-BR', {
       style: 'currency',
@@ -154,7 +159,10 @@ export default function CadastroProduto() {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <h2 style={styles.title}>{editandoId ? 'Editar Produto' : 'Cadastrar Novo Produto'}</h2>
+        <div style={styles.header}>
+          <h2 style={styles.title}>{editandoId ? 'Editar Produto' : 'Cadastrar Novo Produto'}</h2>
+          <button onClick={handleLogout} style={styles.logoutButton}>Sair</button>
+        </div>
         
         {erro && <div style={styles.alertError}>{erro}</div>}
         {sucesso && <div style={styles.alertSuccess}>{sucesso}</div>}
@@ -298,6 +306,14 @@ const styles = {
     width: '100%',
     maxWidth: '900px',
   },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: '25px',
+    borderBottom: '1px solid #333',
+    paddingBottom: '10px',
+  },
   title: {
     color: '#ffffff',
     fontSize: '24px',
@@ -305,6 +321,17 @@ const styles = {
     borderBottom: '1px solid #333',
     paddingBottom: '10px',
   },
+   logoutButton: {
+    backgroundColor: '#e53e3e',
+    color: 'white',
+    border: 'none',
+    borderRadius: '6px',
+    padding: '10px 16px',
+    fontSize: '14px',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s',
+  }, 
   subtitle: {
     color: '#ffffff',
     fontSize: '20px',

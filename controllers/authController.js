@@ -4,7 +4,7 @@ const db = require('../database/db');
 require('dotenv').config();
 
 const JWT_SECRET = process.env.JWT_SECRET;
-const EXPIRACAO = '2m';
+const EXPIRACAO = '2h';
 
 exports.login = (req, res) => {
     const { email, senha } = req.body;
