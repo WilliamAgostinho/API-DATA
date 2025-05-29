@@ -1,23 +1,26 @@
 Este projeto consiste em uma API em Node.js (backend) e uma interface em React com Vite (frontend) para controle de produtos com autenticação JWT.
 
 ---
-Usuário para login deve conter:
+
+Usuário para inserir no banco via postman deve conter:
 Nome, email e senha
-Para realizar o login somente email e senha é validado
----
+OBS:Futuramente será implementado tela de cadastro de usuário.
+
+## Para realizar o login somente email e senha é validado.
 
 ## 🔧 Pré-requisitos
 
 - [Node.js](https://nodejs.org/) (versão recomendada: 18 ou superior)
 - [npm](https://www.npmjs.com/) (vem junto com o Node.js)
 - [Banco de dados configurado] — MySql
+
 ---
 
 ## 🚀 Instalação e execução
 
 ### 🔙 Backend
 
-1. Abra o terminal na pasta `backend`:
+1. Abra o terminal na pasta `API-DATA`:
 
    ```bash
    cd API-DATA
@@ -42,7 +45,7 @@ Para realizar o login somente email e senha é validado
 
 ### 💻 Frontend
 
-1. Abra outro terminal na pasta `frontend`:
+1. Abra outro terminal na pasta `API-DATA/frontend`:
 
    ```bash
    cd frontend

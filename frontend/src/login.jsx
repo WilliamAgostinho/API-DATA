@@ -5,6 +5,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState("");
+  const [setLiberado] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,6 +29,15 @@ export default function Login() {
 
       if (!response.ok) {
         setErro(data.mensagem || "Erro no login");
+
+        // Se for erro 429, recarrega após 2 minutos
+        if (response.status === 429) {
+          setTimeout(() => {
+            window.location.reload();
+            setLiberado(true);
+          }, 2 * 60 * 1000); // 2 minutos em milissegundos
+        }
+
         return;
       }
 
